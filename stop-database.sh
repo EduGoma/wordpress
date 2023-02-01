@@ -1,3 +1,3 @@
 #!/bin/sh
-docker stop some-mariadb
-docker rm some-mariadb
+docker stop wordpress_mariadb_1
+docker rm wordpress_mariadb_1

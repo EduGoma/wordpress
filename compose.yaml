@@ -1,0 +1,20 @@
+
+version: "3"
+services:
+  mariadb:
+    image: mariadb:latest
+    environment:
+      - MARIADB_USER=example-user
+      - MARIADB_PASSWORD=my_cool_secret
+      - MARIADB_ROOT_PASSWORD=my-secret-pw
+      - MARIADB_DATABASE=wordpress
+   # ports:
+   #   - "3306:3306"
+    volumes:
+      - ./mariadb-data/:/var/lib/mysql/
+  apache2.4:
+    image: httpd:2.4
+    ports:
+      - "80:80"
+    volumes:
+      - ./http/:/usr/local/apache2/htdocs/
